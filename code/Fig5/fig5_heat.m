@@ -1,15 +1,18 @@
-% Simulate the phage-bacteria-immune model, calculate steady state
-% bacteria and phage densities at different phage decay and adsorption rate, 
-% and plot the resulting heat maps
-
-% Figure caption: 
-%Heat map showing the dependence of (a) log steady state bacteria
-%density $B_S$ and (b) log steady state phage density $P_S$ on the phage decay
-%rate $\omega$ and adsorption rate $\phi$. The solid line is
-%$B_P=B_I^S$, the dashed line is $B_P=B_I^U$ and the dotted line is $B_P=B_I^M$. 
-%The points labeled by A, B and C are sample points of the different regimes 
-%with time series shown in Figs. \ref{fig6}(a), (b) and (c) respectively. 
-%The initial conditions are given by $B_0=B_I^S$, $P_0=10^5$ ml$^{-1}$ and $I_0=K_I$.
+% Generates Fig. 5 of Leung & Weitz, J. Theor. Biol. 429, 241 (2017):
+% steady-state heat maps of bacteria (Fig. 5a) and phage (Fig. 5b)
+% density across the phage decay rate (omega) and adsorption rate (phi)
+% parameter space.
+%
+% For each (omega, phi) pair the system is integrated for TT = 11000 h
+% and the last 1000 h are averaged as a steady-state estimate. The long
+% horizon allows the trajectories in the bistable regime to commit to 
+% an attractor before sampling.
+%
+% Three threshold curves are overlaid by plot_heat.m, defined by the
+% equilibrium bacterial densities B_I^U, B_I^S, B_I^M (Eqs. 4 and 10
+% of the paper), computed at lines 46-49 below. These separate the
+% phage-immune synergy (static and dynamic), coexistence, and 
+% phage-elimination regimes as described in Table 2 of the paper.
 
 close all;
 
