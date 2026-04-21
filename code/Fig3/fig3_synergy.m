@@ -8,7 +8,7 @@
 %   subfig 2 : bacteria + immunity only        -> Fig. 3(b) main panel
 %   subfig 3 : bacteria + phage + immunity     -> Fig. 3(c) 
 %   subfig 4 : low-inoculum case               -> Fig. 3(b) inset
-% Initial conditions for each case are set in pop0_sub (line 51).
+% Initial conditions for each case are set in pop0_sub (line 56).
 % Parameters follow Table 3 of the paper; values and units inline below.
 
 close all;
