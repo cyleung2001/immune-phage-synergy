@@ -1,10 +1,15 @@
-% Plot time series of system with (a) bacteria and phage only, (b) bacteria
-% and immune response only and (c) bacteria, phage and immune response
-% Figure caption: 
-%Time series of bacteria density $B$ (green curve), phage density $P$
-%(blue curve) and immune response $I$ (purple curve) in our model with (a) only
-%bacteria and phage, (b) only bacteria and immune response, and (c) bacteria,
-%phage and immune response combined.
+% Generates Fig. 3 of Leung & Weitz, J. Theor. Biol. 429, 241 (2017):
+% time series demonstrating synergistic elimination of bacteria by
+% phage and innate immunity.
+%
+% Runs four initial-condition cases using the shared RHS in
+% infection_immune_bistable.m:
+%   subfig 1 : bacteria + phage only           -> Fig. 3(a)
+%   subfig 2 : bacteria + immunity only        -> Fig. 3(b) main panel
+%   subfig 3 : bacteria + phage + immunity     -> Fig. 3(c) 
+%   subfig 4 : low-inoculum case               -> Fig. 3(b) inset
+% Initial conditions for each case are set in pop0_sub (line 51).
+% Parameters follow Table 3 of the paper; values and units inline below.
 
 close all;
 clear all;
