@@ -1,5 +1,13 @@
+% RHS of the bacteria-phage-immune ODE system.
+% Implements Eqs. (1)-(3) of Leung & Weitz, J. Theor. Biol. 429, 241 (2017).
+%   dB/dt : logistic bacterial growth, phage lysis (mass action),
+%           saturating immune killing (half-max at B = KD)
+%   dP/dt : phage production (burst size beta) minus first-order decay
+%   dI/dt : logistic immune activation, gated by bacterial antigen (KN)
+% State vector y = [B; P; I] in units of ml^-1.
+% Parameters passed via struct `para`; see fig3_synergy.m or fig5_heat.m
+% for values and units.
 
-% Model of bacteria-phage-immune system to be integrated
 function dy=infection(t,y,para)
     dy=zeros(3,1);
     bpop=y(1);
